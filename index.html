@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue vezba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <h2>{{imeSajta}}</h2>
+    </header>
+    
+    <main>
+        <h1>{{dobrodosli}}</h1>
+
+        <div 
+            v-for="(pokemon, i) in pokemoni" 
+            v-if="i >= prikaziOd && i < prikaziDo"
+        >
+            <h3>{{pokemon.name}}</h3>
+            <img v-bind:src="pokemon.imageUrl" v-bind:alt="pokemon.name">
+        </div>
+
+        <button 
+            v-for="brojStrane in Math.floor(pokemoni.length / 20)"
+            v-on:click="okreniStranu(brojStrane)"
+        >
+            {{brojStrane}}
+        </button>
+    </main>
+
+    <footer id="footer">
+        {{copyright}}
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="header.js"></script>
+    <script src="main.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
