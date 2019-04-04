@@ -15,12 +15,14 @@
     <main>
         <h1>{{dobrodosli}}</h1>
 
-        <div 
-            v-for="(pokemon, i) in pokemoni" 
-            v-if="i >= prikaziOd && i < prikaziDo"
-        >
-            <h3>{{pokemon.name}}</h3>
-            <img v-bind:src="pokemon.imageUrl" v-bind:alt="pokemon.name">
+        <div class="pokemoni">
+            <div
+                v-for="(pokemon, i) in pokemoni" 
+                v-if="i >= prikaziOd && i < prikaziDo"
+            >
+                <h3>{{pokemon.name}}</h3>
+                <img v-bind:src="pokemon.imageUrl" v-bind:alt="pokemon.name">
+            </div>
         </div>
 
         <button 

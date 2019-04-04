@@ -9,3 +9,14 @@ header, footer {
     background: maroon;
     color: white;
 }
+
+img {
+    max-width: 100%;
+}
+
+.pokemoni {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 185px);
+    grid-column-gap: 20px;
+    justify-content: center;
+}
