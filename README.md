@@ -1,3 +1,5 @@
+# Pokemoni Vue.js
+
 ## TODO
 
 - napraviti paginaciju
