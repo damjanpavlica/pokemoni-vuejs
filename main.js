@@ -1,13 +1,15 @@
+const inicijalnoPokemona = 20
+
 new Vue({
-  el: "main",
+  el: "#main",
 
   data() {
     return {
       dobrodosli: "Dobrodosli na Pokemon aplikaciju",
       pokemoni: [],
       prikaziOd: 0,
-      prikaziDo: 20,
-      poStranici: 20,
+      poStranici: inicijalnoPokemona,
+      prikaziDo: inicijalnoPokemona,
     }
   },
 
@@ -23,6 +25,19 @@ new Vue({
     okreniStranu(brojStrane) {
       this.prikaziOd = brojStrane * this.poStranici - this.poStranici
       this.prikaziDo = brojStrane * this.poStranici
+    },
+
+    jelNaTrenutnojStrani(i) {
+      return i >= this.prikaziOd && i < this.prikaziDo
+    },
+
+    brojStrana() {
+      return Math.ceil(this.pokemoni.length / this.poStranici)
+    },
+
+    azurirajPrikaz() {
+      this.okreniStranu(1)
+      this.prikaziDo = this.poStranici
     }
   }
 

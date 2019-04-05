@@ -2,6 +2,7 @@
 
 ## TODO
 
-- napraviti paginaciju
-- da moze da se bira broj kartica po stranici
+* napraviti paginaciju
+    - obeleziti aktivno dugme
+* da moze da se bira broj pokemona po stranici
 - napraviti pretragu

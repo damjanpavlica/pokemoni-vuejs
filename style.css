@@ -20,3 +20,8 @@ img {
     grid-column-gap: 20px;
     justify-content: center;
 }
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

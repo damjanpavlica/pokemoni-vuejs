@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue vezba</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header id="header">
         <h2>{{imeSajta}}</h2>
     </header>
-    
-    <main>
-        <h1>{{dobrodosli}}</h1>
+
+    <main id="main">
+        <div>
+            <h1>{{dobrodosli}}</h1>
+
+            <label>Broj pokemona po stranici
+                <input v-model="poStranici" v-on:input="azurirajPrikaz">
+            </label>
+        </div>
 
         <div class="pokemoni">
-            <div
-                v-for="(pokemon, i) in pokemoni" 
-                v-if="i >= prikaziOd && i < prikaziDo"
-            >
+            <div v-for="(pokemon, i) in pokemoni" v-if="jelNaTrenutnojStrani(i)">
                 <h3>{{pokemon.name}}</h3>
-                <img v-bind:src="pokemon.imageUrl" v-bind:alt="pokemon.name">
+                <img :src="pokemon.imageUrl" :alt="pokemon.name">
             </div>
         </div>
 
-        <button 
-            v-for="brojStrane in Math.floor(pokemoni.length / 20)"
-            v-on:click="okreniStranu(brojStrane)"
-        >
-            {{brojStrane}}
-        </button>
+        <div class="paginacija">
+            <button v-for="brojStrane in brojStrana()" v-on:click="okreniStranu(brojStrane)">
+                {{brojStrane}}
+            </button>
+        </div>
     </main>
 
     <footer id="footer">
@@ -43,4 +47,5 @@
     <script src="main.js"></script>
     <script src="footer.js"></script>
 </body>
+
 </html>
