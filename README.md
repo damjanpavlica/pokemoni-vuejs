@@ -3,6 +3,6 @@
 ## TODO
 
 * napraviti paginaciju
-    - obeleziti aktivno dugme
+* obeleziti aktivno dugme
 * da moze da se bira broj pokemona po stranici
 - napraviti pretragu

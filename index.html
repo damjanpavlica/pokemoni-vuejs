@@ -10,11 +10,9 @@
 
 <body>
 
-    <header id="header">
-        <h2>{{imeSajta}}</h2>
-    </header>
-
     <main id="main">
+        <moj-header></moj-header>
+
         <div>
             <h1>{{dobrodosli}}</h1>
 
@@ -31,8 +29,12 @@
         </div>
 
         <div class="paginacija">
-            <button v-for="brojStrane in brojStrana()" v-on:click="okreniStranu(brojStrane)">
-                {{brojStrane}}
+            <button 
+                v-for="broj in brojStrana()" 
+                v-on:click="okreniStranu(broj)"
+                v-bind:class="{ active: aktivnaStrana == broj }"
+            >
+                {{broj}}
             </button>
         </div>
     </main>

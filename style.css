@@ -25,3 +25,7 @@ main {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
+.active {
+    color: crimson;
+}

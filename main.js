@@ -1,4 +1,4 @@
-const inicijalnoPokemona = 20
+const inicijalnoPokemona = 12
 
 new Vue({
   el: "#main",
@@ -10,6 +10,7 @@ new Vue({
       prikaziOd: 0,
       poStranici: inicijalnoPokemona,
       prikaziDo: inicijalnoPokemona,
+      aktivnaStrana: 1,
     }
   },
 
@@ -25,6 +26,7 @@ new Vue({
     okreniStranu(brojStrane) {
       this.prikaziOd = brojStrane * this.poStranici - this.poStranici
       this.prikaziDo = brojStrane * this.poStranici
+      this.aktivnaStrana = brojStrane
     },
 
     jelNaTrenutnojStrani(i) {
